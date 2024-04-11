@@ -21,7 +21,7 @@ const MAX_WARPS = 10, WARP_TIME = 3600*6, WARP_LENGTH = 1800
 const MAIN = {
     grassGain() {
         let x = Decimal.mul(5,upgEffect('grass',0)).mul(tmp.tier.mult).mul(tmp.compact)
-        let x = x.mul(100000000000)
+        
 
         x = x.mul(upgEffect('perk',0))
         x = x.mul(upgEffect('pp',0))
@@ -82,7 +82,7 @@ const MAIN = {
     },
     grassCap() {
         let x = 10+upgEffect('grass',1,0)+upgEffect('perk',1,0)+upgEffect('ap',4,0)+starTreeEff('progress',0,0)
-
+        x *= x
         x *= upgEffect('unGrass',1,1)
 
         x *= starTreeEff('ring',7,1)
